@@ -16,6 +16,7 @@ Meteor Snippets package for UltiSnips. UltiSnips is the ultimate solution for sn
 
 
         ```bash
+        cd ~/.vim
         svn checkout https://github.com/pascoual/meteor-vim-ultisnips
         ```
 
