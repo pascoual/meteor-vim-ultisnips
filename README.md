@@ -22,7 +22,7 @@ Meteor Snippets package for UltiSnips. UltiSnips is the ultimate solution for sn
 
 ## Contributors
 * Pascal Richier @pascalrichier
-* Theo Styles as contributor of meteor-snippets for Atom from which come some snippets
+* Theo Styles as contributor of [meteor-snippets](https://github.com/ThusStyles/meteor-snippets) for Atom from which come some snippets
 * Cristian Leyes as contributor of meteor-snippets for Atom
 * Daniel Jonce Evans as contributor of meteor-snippets for Atom
 * Bernardo Kuri as contributor of meteor-snippets for Atom
