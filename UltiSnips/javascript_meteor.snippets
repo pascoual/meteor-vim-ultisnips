@@ -1,0 +1,90 @@
+# Meteor UltiSnip snippets file
+# Contributors:
+# - Pascal Richier @pascalrichier
+# - Theo Styles as contributor of meteor-snippets for Atom from which come some snippets
+# - Cristian Leyes as contributor of meteor-snippets for Atom
+# - Daniel Jonce Evans as contributor of meteor-snippets for Atom
+# - Bernardo Kuri as contributor of meteor-snippets for Atom
+
+
+priority -40
+
+# Collections
+
+snippet mCollAllow "Meteor: Collection Allow structure"
+${1:Collection}.allow({
+  insert: function (userId, doc) {
+	// the user must be logged in, and the document must be owned by the user
+	return (userId && doc.owner === userId);
+  },
+  update: function (userId, doc, fields, modifier) {
+	// can only change your own documents
+	return doc.owner === userId;
+  },
+  remove: function (userId, doc) {
+	// can only remove your own documents
+	return doc.owner === userId;
+  },
+  fetch: ['owner']
+});
+endsnippet
+
+snippet mCollDeny "Meteor: Collection Deny structure"
+${1:Collection}.deny({
+  update: function (userId, docs, fields, modifier) {
+	// can't change owners
+	return _.contains(fields, 'owner');
+  },
+  remove: function (userId, doc) {
+	// can't remove locked documents
+	return doc.locked;
+  },
+  fetch: ['locked'] // no need to fetch 'owner'
+});
+endsnippet
+
+snippet mCollNew "Meteor: Collection declaration"
+${1:Collection} = new Meteor.Collection("${2:collection}");
+endsnippet
+
+# Pub Sub
+
+snippet mPublish "Meteor: Publish"
+Meteor.publish("${1:name}", function(${2:argument}){
+  ${3}
+});
+endsnippet
+
+snippet mSubscribe "Meteor: Subscrine"
+Meteor.subscribe("${1:name}", ${2:argument});
+endsnippet
+
+# Templates
+
+snippet mTmplRendered "Meteor: Template Rendered"
+Template.${1:name}.rendered = function(){
+  ${2}
+}
+endsnippet
+
+snippet mTmplHelpers "Meteor: Template Helpers"
+Template.${1:name}.helpers({
+  ${2:helper}: function(){
+	${3}
+  }
+});
+endsnippet
+
+snippet mTmplEvents "Meteor: Template.xxx.events(...)"
+Template.${1:name}.events({
+  "${2:click} ${3:.class}": function(evt, tmpl){
+    ${4}
+  }
+});
+endsnippet
+
+snippet mTmplCreated "Meteor: Template Created"
+Template.${1:name}.created = function(){
+  ${2}
+}
+endsnippet

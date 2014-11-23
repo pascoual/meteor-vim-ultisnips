@@ -1,0 +1,36 @@
+# Meteor UltiSnip snippets file
+# Contributors:
+# - Pascal Richier @pascalrichier
+# - Theo Styles as contributor of meteor-snippets for Atom from which come some snippets
+# - Cristian Leyes as contributor of meteor-snippets for Atom
+# - Daniel Jonce Evans as contributor of meteor-snippets for Atom
+# - Bernardo Kuri as contributor of meteor-snippets for Atom
+
+
+priority -40
+
+snippet mTmpl "Meteor: Template"
+<template name="${1:name}">
+  ${2}
+</template>
+endsnippet
+
+snippet mEach "Meteor: Each"
+{{#each ${1:collections}}}
+  ${2}
+{{/each}}
+endsnippet
+
+snippet mIf "Meteor: If"
+{{#if ${1:statement}}}
+  ${2}
+{{/if}}
+endsnippet
+
+snippet mIfElse "Meteor: If then Else"
+{{#if ${1:statement}}}
+  ${2}
+{{else}}
+  ${3}
+{{/if}}
+endsnippet
